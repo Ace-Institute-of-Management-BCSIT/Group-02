@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sikka Dashboard</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f6f4;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+    gap:20px;
+    padding:20px;
+}
+
+/* LEFT SIDEBAR */
+
+.sidebar{
+    width:240px;
+    background:white;
+    border-radius:20px;
+    padding:25px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:40px;
+}
+
+.logo h2{
+    color:#2e7d32;
+}
+
+.logo i{
+    color:#2e7d32;
+    font-size:30px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.sidebar li:hover{
+    background:#edf7ed;
+}
+
+.active{
+    background:#edf7ed;
+    color:#2e7d32;
+    font-weight:bold;
+}
+
+/* MAIN CONTENT */
+
+.main{
+    flex:1;
+}
+
+.welcome-card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.stats{
+    display:flex;
+    gap:60px;
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+.stats h2{
+    color:#2e7d32;
+}
+
+.progress{
+    width:100%;
+    height:12px;
+    background:#ddd;
+    border-radius:20px;
+    margin-top:10px;
+}
+
+.progress-fill{
+    width:68%;
+    height:100%;
+    background:#2e7d32;
+    border-radius:20px;
+}
+
+.jar{
+    font-size:120px;
+}
+
+.actions{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
+
+.actions button{
+    border:none;
+    padding:15px 25px;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+    font-weight:bold;
+}
+
+.green{
+    background:#43a047;
+}
+
+.blue{
+    background:#1565c0;
+}
+
+.purple{
+    background:#8e24aa;
+}
+
+.activity{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    margin-top:20px;
+}
+
+.activity h2{
+    margin-bottom:20px;
+}
+
+.activity-item{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+/* RIGHT PANEL */
+
+.right-panel{
+    width:320px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+}
+
+.streak{
+    text-align:center;
+    background:#edf7ed;
+    padding:20px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.streak h1{
+    color:#2e7d32;
+}
+
+.week{
+    display:flex;
+    justify-content:space-between;
+    margin-top:15px;
+    color:#2e7d32;
+}
+
+.circle{
+    width:140px;
+    height:140px;
+    border:10px solid #2e7d32;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:20px auto;
+    font-size:30px;
+    font-weight:bold;
+    color:#2e7d32;
+}
+
+.goal-btn{
+    width:100%;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.alert{
+    background:#fff4ef;
+    padding:15px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.alert span{
+    color:red;
+    font-weight:bold;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-coins"></i>
+            <h2>Sikka</h2>
+        </div>
+
+        <ul>
+            <li class="active"><i class="fas fa-home"></i> Dashboard</li>
+            <li><i class="fas fa-piggy-bank"></i> Savings</li>
+            <li><i class="fas fa-wallet"></i> Expenses</li>
+            <li><i class="fas fa-bullseye"></i> Goals</li>
+            <li><i class="fas fa-chart-bar"></i> Reports</li>
+            <li><i class="fas fa-cog"></i> Settings</li>
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+
+        <div class="welcome-card">
+
+            <div>
+
+                <h1>Good Morning, Pranavi 👋</h1>
+                <p>Let's make today a great day to save.</p>
+
+                <div class="stats">
+
+                    <div>
+                        <h4>Total Savings</h4>
+                        <h2>Rs. 24,500</h2>
+                    </div>
+
+                    <div>
+                        <h4>This Month</h4>
+                        <h2>+ Rs. 3,200</h2>
+                    </div>
+
+                </div>
+
+                <h4>Goal Progress: New Laptop</h4>
+
+                <div class="progress">
+                    <div class="progress-fill"></div>
+                </div>
+
+                <p>Rs.34,000 / Rs.50,000</p>
+
+            </div>
+
+            <div class="jar">
+                🌱
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button class="green">Add Savings</button>
+            <button class="blue">Add Expense</button>
+            <button class="purple">Create Goal</button>
+
+        </div>
+
+        <div class="activity">
+
+            <h2>Recent Activity</h2>
+
+            <div class="activity-item">
+                <span>Saved</span>
+                <strong>+ Rs.500</strong>
+            </div>
+
+            <div class="activity-item">
+                <span>Expense - Coffee</span>
+                <strong>- Rs.200</strong>
+            </div>
+
+            <div class="activity-item">
+                <span>Deposit</span>
+                <strong>+ Rs.1000</strong>
+            </div>
+
+            <div class="activity-item">
+                <span>Expense - Food</span>
+                <strong>- Rs.650</strong>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- RIGHT PANEL -->
+
+    <aside class="right-panel">
+
+        <div class="card">
+
+            <h3>🔥 Savings Streak</h3>
+
+            <div class="streak">
+                <h1>12 Days</h1>
+                <p>Keep going!</p>
+            </div>
+
+            <div class="week">
+                <span>✔</span>
+                <span>✔</span>
+                <span>✔</span>
+                <span>✔</span>
+                <span>✔</span>
+                <span>✔</span>
+                <span>○</span>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🎯 Goal Progress</h3>
+
+            <div class="circle">
+                68%
+            </div>
+
+            <h4>New Laptop</h4>
+
+            <p>Rs.34,000 / Rs.50,000</p>
+
+            <br>
+
+            <button class="goal-btn">
+                View Goal
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h3>💡 Spending Alert</h3>
+
+            <div class="alert">
+                Food spending increased by
+                <span>15%</span>
+                this week.
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+
+</body>
+</html>
