@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sikka</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#E4E8DC;
+    --sage:#9DA38B;
+    --sage-dark:#7E866C;
+    --cream:#F7F7F3;
+    --dark:#23262B;
+    --text:#555;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--dark);
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:1400px;
+    background:var(--sage);
+    border-radius:20px;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:1.8rem;
+    font-weight:700;
+}
+
+.logo-img{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:contain;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:500;
+}
+
+.btn{
+    background:var(--cream);
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    margin-left:200px;
+}
+
+
+.btn1{
+    background:var(--cream);
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    padding-top:120px;
+}
+
+.hero h1{
+    font-size:5rem;
+    line-height:1.1;
+}
+
+.hero span{
+    color:var(--sage-dark);
+}
+
+.hero p{
+    max-width:700px;
+    margin:25px auto;
+    color:var(--text);
+    line-height:1.8;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    margin-top:10px;
+}
+
+.secondary{
+    background:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    background:var(--sage);
+    margin-top:60px;
+    padding:30px;
+    border-radius:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.card{
+    background:var(--cream);
+    padding:30px;
+    border-radius:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.insight{
+    background:var(--cream);
+    margin-top:20px;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 0;
+}
+
+#features,
+#how,
+#benefits,
+#about{
+    scroll-margin-top:120px;
+}
+
+.title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.desc{
+    text-align:center;
+    color:var(--text);
+    margin-bottom:50px;
+}
+
+/* HOW */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.step{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.num{
+    width:50px;
+    height:50px;
+    background:var(--sage);
+    border-radius:50%;
+    margin:auto;
+    margin-bottom:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* BENEFITS */
+
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.benefit{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+}
+
+/* ABOUT */
+
+.about{
+    background:var(--sage);
+    padding:50px;
+    border-radius:30px;
+    text-align:center;
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+    margin-top:15px;
+}
+
+@media(max-width:900px){
+
+.hero h1{
+    font-size:3rem;
+}
+
+.grid,
+.steps,
+.benefits{
+    grid-template-columns:1fr;
+}
+
+nav ul{
+    display:none;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="Sikka (1).png" class="logo-img" alt="Logo">
+        <span>Sikka</span>
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <!-- CHANGED: now opens login page -->
+    <button class="btn" onclick="window.location.href='login.html'">
+        Login 
+    </button>
+    <button class="btn1" onclick="window.location.href='login.html'">
+        Sign-up
+    </button>
+</nav>
+
+<div class="container">
+
+<section class="hero" id="home">
+
+<h1>
+Track Expenses.<br>
+<span>Save More.</span><br>
+Achieve Your Goals.
+</h1>
+
+<p>
+Manage your finances smarter with Sikka. Track spending,
+set budgets, split expenses and gain meaningful financial insights.
+</p>
+
+<div class="buttons">
+    <button class="secondary"
+    onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        Learn More
+    </button>
+</div>
+
+<div class="dashboard" id="features">
+
+<div class="grid">
+
+<div class="card">
+<h3>Expense Tracking</h3>
+<p>Record daily income and expenses instantly.</p>
+</div>
+
+<div class="card">
+<h3>Budget Planning</h3>
+<p>Create monthly budgets and stay on track.</p>
+</div>
+
+<div class="card">
+<h3>Group Splitting</h3>
+<p>Split expenses with friends and roommates.</p>
+</div>
+
+<div class="card">
+<h3>Analytics</h3>
+<p>Visualize spending patterns with reports.</p>
+</div>
+
+</div>
+
+<div class="insight">
+<h2>Smart Financial Insights</h2>
+<p>
+Monthly summaries, spending trends and budget alerts all in one place.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="how">
+<h2 class="title">How It Works</h2>
+<p class="desc">Start managing your finances in four simple steps.</p>
+
+<div class="steps">
+
+<div class="step">
+<div class="num">1</div>
+<h3>Create Account</h3>
+</div>
+
+<div class="step">
+<div class="num">2</div>
+<h3>Add Expenses</h3>
+</div>
+
+<div class="step">
+<div class="num">3</div>
+<h3>Categorize</h3>
+</div>
+
+<div class="step">
+<div class="num">4</div>
+<h3>Analyze</h3>
+</div>
+
+</div>
+</section>
+
+<section id="benefits">
+
+<h2 class="title">Benefits</h2>
+
+<div class="benefits">
+
+<div class="benefit">
+<h3>Save Time</h3>
+<p>Track expenses quickly and efficiently.</p>
+</div>
+
+<div class="benefit">
+<h3>Stay Organized</h3>
+<p>Keep all finances in one place.</p>
+</div>
+
+<div class="benefit">
+<h3>Build Better Habits</h3>
+<p>Understand where your money goes.</p>
+</div>
+
+<div class="benefit">
+<h3>Reach Goals</h3>
+<p>Achieve your savings targets faster.</p>
+</div>
+
+</div>
+</section>
+
+<section id="about">
+
+<div class="about">
+
+<h2>About Sikka</h2>
+
+<p>
+Sikka is a web-based expense tracking platform designed for students and professionals. Track expenses, manage budgets and gain financial clarity through a simple and modern experience.
+</p>
+
+</div>
+
+</section>
+
+</div>
+
+</body>
+</html>
